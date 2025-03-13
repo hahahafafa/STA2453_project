@@ -18,8 +18,9 @@ This repository contains the code and documentation for a project aimed at predi
 │   ├── overlay_masks.py         # Script for overlaying brain masks on MRI data
 │   ├── feature_engineering.py   # Script for feature extraction and engineering
 │   └── train_model.py           # Script for training ML/DL models
-├── README.md                    # This file
-└── requirements.txt             # List of required Python packages
+├── documentation/
+│   └── Proposal.pdf             # Proposal of the data
+└── README.md                    # This filees
 ```
 
 ---
