@@ -14,6 +14,7 @@ This repository contains the code and documentation for a project aimed at predi
 ├── notebooks/
 │   ├── EDA.ipynb                # Notebook for exploratory data analysis
 │   └── PCA_analysis.ipynb       # Notebook for PCA and dimensionality reduction
+├── example/                     # Example usage: quick run with pretrained model
 ├── scripts/
 │   ├── overlay_masks.py         # Script for overlaying brain masks on MRI data
 │   ├── feature_engineering.py   # Script for feature extraction and engineering
@@ -27,15 +28,69 @@ This repository contains the code and documentation for a project aimed at predi
 
 ## How to Use
 
-1. **Exploratory Data Analysis:**  
-   - Open the `notebooks/EDA.ipynb` file to explore the MRI data, view distributions, and perform quality checks.
+Perfect — I’ll write a **polished, professional README update** that:
 
-2. **Overlay Masks:**  
-   - Use the script in `scripts/overlay_masks.py` to apply the brain mask to the MRI data, reducing background noise and focusing on brain tissue.
+- Shows where your `example/` folder fits
+- Explains **how to quickly run** the reproducible example
+- Makes your repo very clean and easy for others to navigate!
 
-3. **Feature Engineering & Modeling:**  
-   - Run `scripts/feature_engineering.py` to extract key features from the MRI images.
-   - Train your predictive model by running `scripts/train_model.py`.
+---
+
+# 📄 Example README Update
+
+## Project Overview
+This repository contains code and models for predicting concussion recovery time using 3D brain MRI data and demographic information.  
+It includes MRI preprocessing, model training, evaluation, and a lightweight example to quickly demonstrate the workflow without full retraining.
+
+---
+
+## Repository Structure
+
+```bash
+├── example/               # Example usage: quick run with pretrained model
+├── models/                # CNN model definitions
+├── data/                  # Processed datasets (e.g., cleaned_output.csv, brain mask, H5 file)
+├── saved_models/          # Pretrained model checkpoints (.pth)
+├── notebooks/             # Exploratory data analysis and training notebooks
+├── scripts/               # Helper scripts (reconstruction, training, evaluation)
+├── original_shape.npy     # Saved original MRI volume shape
+├── README.md              # Project documentation
+```
+
+---
+
+## Quick Start: Example Usage
+
+You can **run a reproducible example** directly without training the model from scratch.
+
+### 1. Install Requirements
+
+Make sure you have the following packages installed:
+```bash
+pip install torch numpy pandas matplotlib h5py tqdm seaborn
+```
+
+### 2. Run the Example
+
+```bash
+cd example
+python reproducible_example.py
+```
+
+This script will:
+- Load sample MRI + demographic data
+- Generate predicted recovery times
+- Plot predicted vs. actual recovery times
+
+✅You can reproduce the key results in just a few seconds.
+
+---
+
+
+## Notes
+- MRI data volumes were reconstructed using a brain mask and saved in H5 format.
+- The target variable is log-transformed recovery time (`log(d_Recov + 1)`).
+- Original MRI shape is saved in `original_shape.npy` for reproducibility.
 
 ---
 
